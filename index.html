@@ -5,7 +5,7 @@
 <link rel="icon" href="img/xerpium-logo.png">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <div class="wrap">
-<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.0</div>
+<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.1</div>
 <h1>Xerpium Hotel Management<br>Gran Malindo Hotel</h1>
 <p>Panduan lengkap dari awal sampai akhir: setup chart of accounts, pajak, dan produk; master data kamar dan harga; reservasi sampai check-out; housekeeping dan night audit; kasir restoran (POS) dengan tagihan ke kamar; cetak langsung lewat Print Direct; serta jurnal dan laporan.</p>
 <div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>35</b></span><span>Tanggal <b>13 November 2026</b></span></div></div>
@@ -31,7 +31,7 @@
 <a href="#reservasi"><span>12</span>Reservasi</a>
 <a href="#tapechart"><span>13</span>Tape chart</a>
 <a href="#grup"><span>14</span>Grup & allotment</a>
-<a href="#diskon"><span>15</span>Minta diskon (persentase / fixed amount)</a>
+<a href="#diskon"><span>15</span>Minta diskon per kamar</a>
 <a href="#checkin"><span>16</span>Check-in & folio</a>
 <a href="#checkout"><span>17</span>Check-out & invoice</a>
 <a href="#batal"><span>18</span>Pembatalan & no-show</a>
@@ -350,20 +350,36 @@
 <figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>Front Desk › Grup & Allotment</code></div><a href="img/old_group_form.png" target="_blank"><img src="img/old_group_form.png" width="800" height="715" loading="lazy" alt="Grup dengan blok kamar, batas rilis, dan master bill."></a><figcaption>Grup dengan blok kamar, batas rilis, dan master bill.</figcaption></figure>
 </section>
 <section id="diskon" class="sec"><div class="kicker">15 · Front desk</div>
-<h2>Minta diskon (persentase / fixed amount)</h2>
-<p class="lead">Diskon kamar dengan persetujuan supervisor.</p>
+<h2>Minta diskon per kamar</h2>
+<p class="lead">Diskon kamar dengan persetujuan supervisor. Setiap kamar bisa punya diskon sendiri: persen atau rupiah per malam.</p>
 <p>Front office boleh menawarkan harga di bawah harga standar, tetapi harga baru berlaku setelah disetujui <b>Supervisor / Duty Manager</b>.</p>
 <ol class="steps">
-<li><div><b>Di reservasi, klik <span class="btn">Minta Diskon</span>.</b> Semua kamar reservasi terisi dengan harga standar.</div></li>
-<li><div><b>Pilih Tipe Diskon:</b> <b>Persentase</b> (isi Diskon %) atau <b>Fixed Amount</b> (isi Diskon Rp).</div></li>
-<li><div><b>Fixed Amount = total potongan untuk seluruh reservasi.</b> Sistem membagi otomatis ke semua kamar dan malam sesuai harga standarnya.</div></li>
+<li><div><b>Di reservasi, klik <span class="btn">Minta Diskon</span>.</b> Semua kamar reservasi masuk ke tabel Kamar dengan harga standarnya.</div></li>
+<li><div><b>Isi diskon tiap kamar di tabel Kamar:</b> pilih <b>Tipe Diskon</b> (<code>%</code> atau <code>Rp / malam</code>) lalu isi <b>Nilai Diskon</b>. Harga Diminta / Malam dan Subtotal Diskon terisi otomatis.</div></li>
+<li><div><b>Atau ketik langsung Harga Diminta / Malam</b> bila tamu minta harga tertentu (mis. Suite jadi 750.000). Diskonnya otomatis menjadi Rp / malam.</div></li>
 <li><div><b>Cek Total Diskon dan Total Setelah Diskon,</b> isi alasan, lalu klik <span class="btn">Ajukan</span>.</div></li>
 <li><div><b>Supervisor mendapat notifikasi,</b> membuka permintaan, lalu klik <span class="btn">Setujui</span> atau <span class="btn">Tolak</span>.</div></li>
-<li><div><b>Setelah disetujui,</b> harga kamar di reservasi otomatis berubah.</div></li></ol>
-<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Front Desk › Permintaan Diskon (Draft)</code></div><a href="img/discount_fixed_draft.png" target="_blank"><img src="img/discount_fixed_draft.png" width="2000" height="1075" loading="lazy" alt="Fixed Amount Rp 75.000 untuk 20 kamar-malam @ Rp 400.000: tiap malam jadi Rp 396.250, total Rp 7.925.000."></a><figcaption>Fixed Amount Rp 75.000 untuk 20 kamar-malam @ Rp 400.000: tiap malam jadi Rp 396.250, total Rp 7.925.000.</figcaption></figure>
-<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Front Desk › Permintaan Diskon (Disetujui)</code></div><a href="img/discount_fixed_approved.jpg" target="_blank"><img src="img/discount_fixed_approved.jpg" width="1350" height="896" loading="lazy" alt="DSC/2026/00017 disetujui: diskon Rp 25.000, harga kamar 215 jadi Rp 675.000."></a><figcaption>DSC/2026/00017 disetujui: diskon Rp 25.000, harga kamar 215 jadi Rp 675.000.</figcaption></figure>
-<div class="note warn"><span>PENTING</span><div>Malam yang sudah diposting ke folio tidak ikut berubah. Ajukan diskon <b>sebelum check-in</b> bila posting tagihan kamar diatur "Saat check-in".</div></div>
-<div class="note info"><span>INFO</span><div>Bila potongan tidak habis dibagi rata, selisih pembulatan (beberapa sen) bisa muncul. Contoh: diskon Rp 100.000 untuk 6 kamar-malam menjadi Rp 99.999,99.</div></div>
+<li><div><b>Setelah disetujui,</b> harga tiap kamar di reservasi berubah sesuai barisnya.</div></li></ol>
+<figure class="shot " style="max-width:1165px"><div class="bar"><span></span><span></span><span></span><code>Front Desk › Permintaan Diskon › Kamar</code></div><a href="img/discount_per_room.jpg" target="_blank"><img src="img/discount_per_room.jpg" width="1165" height="667" loading="lazy" alt="Diskon per kamar"></a><figcaption>Kamar 201 dipotong Rp 50.000/malam (jadi Rp 650.000), kamar 203 dipotong 10% (jadi Rp 630.000), kamar 202 tanpa diskon. Total diskon Rp 360.000.</figcaption></figure>
+<h3>Contoh: beberapa tipe kamar, diskon berbeda</h3>
+<div class="tbl "><table><thead>
+<tr><th>Kamar</th><th>Malam</th><th>Harga Standar</th><th>Tipe Diskon</th><th>Nilai</th><th>Harga Diminta / Malam</th><th>Subtotal Diskon</th></tr></thead><tbody>
+<tr><td>Deluxe 201</td><td>2</td><td>700.000</td><td>Rp / malam</td><td>50.000</td><td><b>650.000</b></td><td>100.000</td></tr>
+<tr><td>Deluxe 202</td><td>2</td><td>700.000</td><td>Rp / malam</td><td>50.000</td><td><b>650.000</b></td><td>100.000</td></tr>
+<tr><td>Suite 401</td><td>2</td><td>850.000</td><td>%</td><td>10</td><td><b>765.000</b></td><td>170.000</td></tr>
+<tr><td>Superior 105</td><td>2</td><td>600.000</td><td>%</td><td>0</td><td><b>600.000</b></td><td>0</td></tr></tbody></table></div>
+<div class="note tip"><span>TIPS</span><div>Pakai <b>Rp / malam</b> agar harga kamar tetap bulat: harga standar langsung dikurangi nominalnya setiap malam.</div></div>
+<h3>Pengisi cepat (Tipe Diskon di bagian atas)</h3>
+<p>Untuk mengisi semua kamar sekaligus, pilih <b>Tipe Diskon</b> di bagian Diskon. Setelah terisi, diskon tiap kamar masih bisa diubah di tabel.</p>
+<div class="tbl "><table><thead>
+<tr><th>Pilihan</th><th>Hasil di semua kamar</th></tr></thead><tbody>
+<tr><td><b>Per Kamar</b> (default)</td><td>Tidak mengisi apa-apa; diskon diisi per baris di tabel Kamar</td></tr>
+<tr><td><b>Persentase</b></td><td>Semua kamar dipotong persen yang sama</td></tr>
+<tr><td><b>Rp / Malam</b></td><td>Semua kamar dipotong nominal yang sama per malam</td></tr>
+<tr><td><b>Fixed Total</b></td><td>Total potongan seluruh reservasi sama dengan nominal yang diisi, dibagi proporsional ke kamar (harga per kamar bisa tidak bulat)</td></tr></tbody></table></div>
+<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Front Desk › Permintaan Diskon (Disetujui)</code></div><a href="img/discount_fixed_approved.jpg" target="_blank"><img src="img/discount_fixed_approved.jpg" width="1350" height="896" loading="lazy" alt="DSC/2026/00017 disetujui"></a><figcaption>DSC/2026/00017 disetujui: diskon Rp 25.000, harga kamar 215 jadi Rp 675.000.</figcaption></figure>
+<div class="note warn"><span>PENTING</span><div>Malam yang sudah diposting ke folio tidak ikut berubah. Ajukan diskon <b>sebelum check-in</b> bila posting tagihan kamar diatur "Saat check-in". Diskon yang melebihi harga standar (atau lebih dari 100%) ditolak.</div></div>
+<div class="note info"><span>INFO</span><div>Kolom <b>Perlu Approval</b> menandai kamar yang diskonnya di atas batas "Diskon Tanpa Approval (%)". Kolom <b>Diskon Efektif (%)</b> bisa dimunculkan dari ikon ⇄ di tabel.</div></div>
 </section>
 <section id="checkin" class="sec"><div class="kicker">16 · Front desk</div>
 <h2>Check-in & folio</h2>
