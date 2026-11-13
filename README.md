@@ -3,14 +3,13 @@
 Panduan pengguna Xerpium Hotel Management: setup CoA, pajak & produk, master data, reservasi sampai check-out,
 housekeeping, night audit, POS restoran (tagihan ke kamar), Print Direct, jurnal, dan laporan.
 
-Website statis (HTML + CSS + JS, tanpa build). Di-hosting di Vercel: setiap push ke `main` otomatis deploy.
+Website statis (HTML + CSS, tanpa JavaScript dan tanpa build). Di-hosting di Vercel: setiap push ke `main` otomatis deploy.
 
 ## Struktur
 
 ```
 index.html        isi panduan (35 bab, satu halaman)
 assets/style.css  tampilan (tema gelap, sidebar, kartu bab, screenshot)
-assets/app.js     sorot bab aktif di daftar isi
 img/              screenshot aplikasi & logo Xerpium
 vercel.json       pengaturan Vercel (cache gambar)
 ```
