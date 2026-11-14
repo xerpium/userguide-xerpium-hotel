@@ -12,4 +12,4 @@
   nomor bab setelahnya serta jumlah "Bab" di hero.
 - Mengganti screenshot: pakai NAMA FILE BARU (gambar di-cache browser 1 hari lewat vercel.json), jangan menimpa file lama.
 - Screenshot diambil dari Xerpium (Odoo 18) db gran-malindo-hotel, lebar 1350 px, JPG.
-- Kode akun mengikuti CoA database (mis. 500.1 Pendapatan Kamar, 300.2 Hutang PBJT, 300.4 Hutang Service).
+- Kode akun mengikuti CoA database (mis. 500.1 Pendapatan Kamar, 300.2 Hutang Pajak PB I, 300.4 Hutang Service).

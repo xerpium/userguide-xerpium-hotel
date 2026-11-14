@@ -5,7 +5,7 @@
 <link rel="icon" href="img/xerpium-logo.png">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <div class="wrap">
-<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.3</div>
+<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.4</div>
 <h1>Xerpium Hotel Management<br>Gran Malindo Hotel</h1>
 <p>Panduan lengkap dari awal sampai akhir: setup chart of accounts, pajak, dan produk; master data kamar dan harga; reservasi sampai check-out; housekeeping dan night audit; kasir restoran (POS) dengan tagihan ke kamar; cetak langsung lewat Print Direct; serta jurnal dan laporan.</p>
 <div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>35</b></span><span>Tanggal <b>13 November 2026</b></span></div></div>
@@ -81,7 +81,7 @@
 <tr><td><b>Hotel Management</b></td><td>Reservasi, tape chart, folio, housekeeping, maintenance, night audit, laporan hotel</td><td>4, 7–22, 27–31</td></tr>
 <tr><td><b>Point of Sale</b></td><td>Kasir restoran; tagihan bisa dibebankan ke folio kamar tamu</td><td>23–24</td></tr>
 <tr><td><b>Print Direct</b></td><td>Cetak struk POS, tiket dapur, dan laporan langsung ke printer lewat HP/tablet Android</td><td>25–26</td></tr>
-<tr><td><b>Accounting</b></td><td>Chart of accounts, pajak PBJT & service, jurnal, invoice, laporan keuangan</td><td>5, 27–31</td></tr>
+<tr><td><b>Accounting</b></td><td>Chart of accounts, pajak Tax & Service 21%, jurnal, invoice, laporan keuangan</td><td>5, 27–31</td></tr>
 <tr><td><b>CRM</b></td><td>Forecast pendapatan dari reservasi (otomatis)</td><td>32</td></tr>
 <tr><td><b>Purchase & Inventory</b></td><td>Pembelian bahan dan stok</td><td>34</td></tr></tbody></table></div>
 </section>
@@ -128,7 +128,7 @@
 <tr><th>Pengaturan</th><th>Keterangan</th><th>Contoh</th></tr></thead><tbody>
 <tr><td>Nama Hotel / Klasifikasi Bintang</td><td>Tampil di kepala laporan PDF</td><td>Hotel Gran Malindo, ★★</td></tr>
 <tr><td>Jam Check-In / Check-Out Default</td><td>Jam standar hotel</td><td>14:00 / 12:00</td></tr>
-<tr><td>Pajak Default</td><td>Dipakai untuk tagihan yang produknya tidak punya pajak</td><td>Service 10% + PBJT 10%</td></tr>
+<tr><td>Pajak Default</td><td>Dipakai untuk tagihan yang produknya tidak punya pajak</td><td>Kosongkan (pajak ikut produk)</td></tr>
 <tr><td>Posting Tagihan Kamar</td><td><b>Saat check-in</b>: semua malam langsung masuk folio. <b>Night audit</b>: ditagih per malam</td><td>Saat check-in</td></tr>
 <tr><td>Kebijakan Pembatalan Default</td><td>Dipakai bila rate plan tidak punya kebijakan sendiri</td><td>Flexible H-1</td></tr>
 <tr><td>Diskon Tanpa Approval (%)</td><td>Batas diskon front office tanpa persetujuan supervisor. 0 = semua diskon perlu approval</td><td>0</td></tr>
@@ -151,23 +151,23 @@
 <tr><td><code>103.1</code></td><td>Piutang Usaha</td><td>Invoice tamu & perusahaan (City Ledger)</td></tr>
 <tr><td><code>103.2</code></td><td>Piutang POS</td><td>Tagihan POS yang dibebankan ke folio kamar</td></tr>
 <tr><td><code>300.1</code></td><td>Hutang Dagang</td><td>Tagihan supplier & komisi agen</td></tr>
-<tr><td><code>300.2</code></td><td>Hutang Pajak PB I Bukittinggi</td><td>PBJT 10% (pajak hotel & restoran)</td></tr>
-<tr><td><code>300.4</code></td><td>Hutang Service Charge</td><td>Service charge 10%</td></tr>
+<tr><td><code>300.2</code></td><td>Hutang Pajak PB I Bukittinggi</td><td>PB I 10% (bagian dari Tax & Service 21%)</td></tr>
+<tr><td><code>300.4</code></td><td>Hutang Service Charge</td><td>Service charge 10% (bagian dari Tax & Service 21%)</td></tr>
 <tr><td><code>500.1</code></td><td>Pendapatan Kamar</td><td>Tagihan kamar</td></tr>
 <tr><td><code>500.2</code> / <code>500.3</code></td><td>Pendapatan Makanan / Minuman</td><td>F&B restoran & room service</td></tr>
 <tr><td><code>500.4</code></td><td>Pendapatan Laundry</td><td>Laundry</td></tr>
 <tr><td><code>500.5</code></td><td>Pendapatan Lain-lain Operasional</td><td>Extra bed, biaya pembatalan, lain-lain</td></tr>
 <tr><td><code>610.1</code> / <code>610.2</code></td><td>HPP Makanan / Minuman</td><td>Harga pokok F&B</td></tr></tbody></table></div>
-<h3>2. Pajak PBJT & Service Charge</h3>
-<p>Buka <span class="path">Accounting <i>›</i> Configuration <i>›</i> Taxes</span>. Hotel dan restoran dikenai <b>PBJT</b> (pajak daerah) dan <b>service charge</b>, bukan PPN.</p>
-<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Accounting › Configuration › Taxes</code></div><a href="img/taxes_list.jpg" target="_blank"><img src="img/taxes_list.jpg" width="1350" height="350" loading="lazy" alt="Empat pajak penjualan: Service Charge 10% dan PBJT 10%, masing-masing versi harga belum termasuk dan sudah termasuk pajak."></a><figcaption>Empat pajak penjualan: Service Charge 10% dan PBJT 10%, masing-masing versi harga belum termasuk dan sudah termasuk pajak.</figcaption></figure>
+<h3>2. Pajak Tax & Service 21%</h3>
+<p>Buka <span class="path">Accounting <i>›</i> Configuration <i>›</i> Taxes</span>. Hotel dan restoran memakai <b>satu pajak 21%</b> yang sudah menggabungkan <b>service charge 10%</b> dan <b>PB I 10%</b> (PB I dihitung dari harga + service, jadi 1,1 × 1,1 = 21%). Bukan PPN.</p>
+<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Accounting › Configuration › Taxes</code></div><a href="img/taxes_list_21.jpg" target="_blank"><img src="img/taxes_list_21.jpg" width="1350" height="234" loading="lazy" alt="Dua pajak penjualan: Tax &amp; Service 21% inc (harga sudah termasuk pajak) dan Tax &amp; Service 21% exc (harga belum termasuk pajak)."></a><figcaption>Dua pajak penjualan: Tax & Service 21% inc (harga sudah termasuk pajak) dan Tax & Service 21% exc (harga belum termasuk pajak).</figcaption></figure>
 <div class="tbl "><table><thead>
 <tr><th>Pajak</th><th>Cara hitung</th><th>Akun</th></tr></thead><tbody>
-<tr><td>Service Charge 10%</td><td>10% ditambahkan di atas harga</td><td>300.4 Hutang Service Charge</td></tr>
-<tr><td>PBJT 10%</td><td>10% ditambahkan di atas harga</td><td>300.2 Hutang Pajak PB I</td></tr>
-<tr><td>Service Charge 10% (Termasuk)</td><td>Harga jual sudah termasuk service</td><td>300.4</td></tr>
-<tr><td>PBJT 10% (Termasuk)</td><td>Harga jual sudah termasuk PBJT</td><td>300.2</td></tr></tbody></table></div>
-<div class="note info"><span>INFO</span><div>Menu F&B memakai pajak <b>belum termasuk</b> (harga menu Rp 28.000 → tamu bayar Rp 33.880). Kamar, paket, dan extra bed memakai pajak <b>termasuk</b>, karena rate kamar publik sudah termasuk 21% pajak & service.</div></div>
+<tr><td>Tax & Service 21% exc</td><td>21% ditambahkan di atas harga. Dipakai menu F&B / POS</td><td>300.4 + 300.2</td></tr>
+<tr><td>Tax & Service 21% inc</td><td>Harga jual sudah termasuk 21%. Dipakai kamar, paket, extra bed</td><td>300.4 + 300.2</td></tr></tbody></table></div>
+<p>Di tab <b>Definition</b>, pajak 21% dibagi otomatis ke dua akun: <b>10/21</b> bagian (47,62%) ke <code>300.4</code> Hutang Service Charge dan <b>11/21</b> bagian (52,38%) ke <code>300.2</code> Hutang Pajak PB I. Jadi laporan service dan PB I tetap terpisah walaupun pajaknya satu.</p>
+<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Accounting › Configuration › Taxes › Tax &amp; Service 21% inc</code></div><a href="img/tax_form_21.jpg" target="_blank"><img src="img/tax_form_21.jpg" width="1350" height="732" loading="lazy" alt="Pajak Tax &amp; Service 21%: 47,62% ke 300.4 Hutang Service Charge dan 52,38% ke 300.2 Hutang Pajak PB I."></a><figcaption>Pajak Tax & Service 21%: 47,62% ke 300.4 Hutang Service Charge dan 52,38% ke 300.2 Hutang Pajak PB I.</figcaption></figure>
+<div class="note info"><span>INFO</span><div>Menu F&B memakai <b>Tax & Service 21% exc</b> (harga menu Rp 28.000 → tamu bayar Rp 33.880: service Rp 2.800 + PB I Rp 3.080). Kamar, paket, dan extra bed memakai <b>Tax & Service 21% inc</b>, karena rate kamar publik sudah termasuk 21% pajak & service.</div></div>
 <h3>3. Jurnal (buku kas/bank)</h3>
 <p>Buka <span class="path">Accounting <i>›</i> Configuration <i>›</i> Journals</span>. Setiap tempat uang masuk punya jurnal sendiri, supaya laporan kas per kasir terpisah.</p>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Accounting › Configuration › Journals</code></div><a href="img/journals_list.jpg" target="_blank"><img src="img/journals_list.jpg" width="1350" height="585" loading="lazy" alt="Jurnal: Customer Invoices, Vendor Bills, Bank BNI, Kas Front Office, Kas Restoran, dan Point of Sale."></a><figcaption>Jurnal: Customer Invoices, Vendor Bills, Bank BNI, Kas Front Office, Kas Restoran, dan Point of Sale.</figcaption></figure>
@@ -199,10 +199,10 @@
 <li><div><b>Buka <span class="path">Point of Sale <i>›</i> Products <i>›</i> Products</span> (atau Accounting › Customers › Products),</b> klik <span class="btn">New</span>.</div></li>
 <li><div><b>Isi nama, Sales Price, dan Reference</b> (kode, misalnya <code>FD-008</code>).</div></li>
 <li><div><b>Product Type:</b> <b>Goods</b> untuk menu/barang, <b>Service</b> untuk jasa (kamar, laundry, extra bed).</div></li>
-<li><div><b>Sales Taxes:</b> Service Charge 10% + PBJT 10% (menu F&B) atau versi <i>Termasuk</i> (kamar/paket).</div></li>
+<li><div><b>Sales Taxes:</b> <b>Tax & Service 21% exc</b> untuk menu F&B / POS (otomatis terisi untuk produk baru), atau <b>Tax & Service 21% inc</b> untuk kamar/paket/extra bed.</div></li>
 <li><div><b>Category:</b> pilih kategori hotel yang benar (Kamar / F&B / Layanan).</div></li>
 <li><div><b>Centang Point of Sale</b> bila produk dijual di kasir restoran; centang <b>Extra Bed</b> khusus produk extra bed.</div></li></ol>
-<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Point of Sale › Products › Nasi Goreng Malindo</code></div><a href="img/product_form.jpg" target="_blank"><img src="img/product_form.jpg" width="1350" height="896" loading="lazy" alt="Produk menu: pajak Service 10% + PBJT 10%, kategori Hotel / F&amp;B Hotel, dijual di Point of Sale."></a><figcaption>Produk menu: pajak Service 10% + PBJT 10%, kategori Hotel / F&B Hotel, dijual di Point of Sale.</figcaption></figure>
+<figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Point of Sale › Products › Nasi Goreng Malindo</code></div><a href="img/product_form_21.jpg" target="_blank"><img src="img/product_form_21.jpg" width="1350" height="732" loading="lazy" alt="Produk menu: pajak Tax &amp; Service 21% exc (Rp 28.000 = Rp 33.880 termasuk pajak), kategori Hotel / F&amp;B Hotel, dijual di Point of Sale."></a><figcaption>Produk menu: pajak Tax & Service 21% exc (Rp 28.000 = Rp 33.880 termasuk pajak), kategori Hotel / F&B Hotel, dijual di Point of Sale.</figcaption></figure>
 <h3>3. Kategori POS & tampilan di kasir</h3>
 <p>Di tab <span class="btn">Point of Sale</span> produk, pilih <b>Category</b> POS (Food, Snack, Beverage, Juice, Soft Drink, Coffee) dan warna tombol. Kategori POS hanya untuk pengelompokan di layar kasir; akun tetap dari kategori produk.</p>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Product › tab Point of Sale</code></div><a href="img/product_pos_tab.jpg" target="_blank"><img src="img/product_pos_tab.jpg" width="1350" height="650" loading="lazy" alt="Kategori POS &quot;Food&quot; dan warna tombol di layar kasir."></a><figcaption>Kategori POS "Food" dan warna tombol di layar kasir.</figcaption></figure>
@@ -619,12 +619,12 @@
 <tr><td>Pendapatan Kamar</td><td><code>500.1</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr>
 <tr><td>Pendapatan Makanan / Minuman</td><td><code>500.2 / 500.3</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr>
 <tr><td>Hutang Service Charge</td><td><code>300.4</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr>
-<tr><td>Hutang Pajak PBJT</td><td><code>300.2</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr></tbody></table><div class="jr-f">Otomatis saat invoice folio diposting</div></div>
+<tr><td>Hutang Pajak PB I</td><td><code>300.2</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr></tbody></table><div class="jr-f">Otomatis saat invoice folio diposting</div></div>
 <div class="jr"><div class="jr-h">3 · Penjualan POS dibayar langsung</div><table><thead>
 <tr><th>Akun</th><th>Kode</th><th class="num">Debit</th><th class="num">Kredit</th></tr></thead><tbody>
 <tr><td>Kas Restoran / Bank</td><td><code>101.2 / 102.1</code></td><td class="num">Rp xxx</td><td class="num">—</td></tr>
 <tr><td>Pendapatan Makanan / Minuman</td><td><code>500.2 / 500.3</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr>
-<tr><td>Service & PBJT</td><td><code>300.4 / 300.2</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr></tbody></table><div class="jr-f">Otomatis saat sesi POS ditutup</div></div>
+<tr><td>Hutang Service / Pajak PB I</td><td><code>300.4 / 300.2</code></td><td class="num">—</td><td class="num">Rp xxx</td></tr></tbody></table><div class="jr-f">Otomatis saat sesi POS ditutup</div></div>
 <div class="jr"><div class="jr-h">4 · POS ditagih ke folio kamar</div><table><thead>
 <tr><th>Akun</th><th>Kode</th><th class="num">Debit</th><th class="num">Kredit</th></tr></thead><tbody>
 <tr><td>Piutang POS</td><td><code>103.2</code></td><td class="num">Rp xxx</td><td class="num">—</td></tr>
