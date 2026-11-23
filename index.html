@@ -5,10 +5,10 @@
 <link rel="icon" href="img/xerpium-logo.png">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <div class="wrap">
-<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.4</div>
+<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.5</div>
 <h1>Xerpium Hotel Management<br>Gran Malindo Hotel</h1>
 <p>Panduan lengkap dari awal sampai akhir: setup chart of accounts, pajak, dan produk; master data kamar dan harga; reservasi sampai check-out; housekeeping dan night audit; kasir restoran (POS) dengan tagihan ke kamar; cetak langsung lewat Print Direct; serta jurnal dan laporan.</p>
-<div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>35</b></span><span>Tanggal <b>13 November 2026</b></span></div></div>
+<div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>36</b></span><span>Tanggal <b>23 November 2026</b></span></div></div>
 <img src="img/xerpium-logo.png" alt="Xerpium">
 </header>
 <div class="layout">
@@ -53,9 +53,10 @@
 <a href="#laporan"><span>31</span>Laporan</a>
 <a href="#crm"><span>32</span>CRM forecast otomatis</a>
 <a href="#ota"><span>33</span>Channel manager (OTA)</a>
-<a href="#pembelian"><span>34</span>Pembelian & stok</a>
+<a href="#pr-stok"><span>34</span>Purchase Request & cek stok</a>
+<a href="#pembelian"><span>35</span>Pembelian & stok</a>
 <div class="tg">Referensi</div>
-<a href="#faq"><span>35</span>FAQ & troubleshooting</a>
+<a href="#faq"><span>36</span>FAQ & troubleshooting</a>
 </nav>
 <main>
 <section id="alur" class="sec"><div class="kicker">01 · Dasar</div>
@@ -83,7 +84,7 @@
 <tr><td><b>Print Direct</b></td><td>Cetak struk POS, tiket dapur, dan laporan langsung ke printer lewat HP/tablet Android</td><td>25–26</td></tr>
 <tr><td><b>Accounting</b></td><td>Chart of accounts, pajak Tax & Service 21%, jurnal, invoice, laporan keuangan</td><td>5, 27–31</td></tr>
 <tr><td><b>CRM</b></td><td>Forecast pendapatan dari reservasi (otomatis)</td><td>32</td></tr>
-<tr><td><b>Purchase & Inventory</b></td><td>Pembelian bahan dan stok</td><td>34</td></tr></tbody></table></div>
+<tr><td><b>Purchase & Inventory</b></td><td>Purchase request dengan cek stok Store, pembelian bahan dan stok</td><td>34–35</td></tr></tbody></table></div>
 </section>
 <section id="akses" class="sec"><div class="kicker">02 · Dasar</div>
 <h2>Peran & hak akses</h2>
@@ -700,7 +701,27 @@
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Channel Manager › Channel Connection</code></div><a href="img/channel_connection_form.jpg" target="_blank"><img src="img/channel_connection_form.jpg" width="1350" height="680" loading="lazy" alt="Form koneksi Channex: API key, property ID, rate multiplier, webhook, dan status."></a><figcaption>Form koneksi Channex: API key, property ID, rate multiplier, webhook, dan status.</figcaption></figure>
 <div class="note info"><span>INFO</span><div>Booking OTA masuk ke <span class="path">Channel Manager <i>›</i> OTA Bookings</span> dan menjadi reservasi. Booking OTA selalu diterima walau tipe kamar penuh; reservasinya diberi to-do <b>Overbooking OTA</b>.</div></div>
 </section>
-<section id="pembelian" class="sec"><div class="kicker">34 · Akuntansi & laporan</div>
+<section id="pr-stok" class="sec"><div class="kicker">34 · Akuntansi & laporan</div>
+<h2>Purchase Request & cek stok Store</h2>
+<p class="lead">Sebelum membeli, Purchase Request (PR) dari departemen dicek dulu ke Store/Gudang. Barang yang masih ada diambil dari Store, hanya kekurangannya yang dibeli.</p>
+<div class="flow"><div class="fstep"><b>1 · PR departemen</b><p>Dapur/Bar/HK isi barang & jumlah</p></div><div class="fstep"><b>2 · Cek Stok</b><p>Lihat yang ada di Store & yang perlu dibeli</p></div><div class="fstep"><b>3 · Proses</b><p>Transfer Store → departemen dibuat otomatis</p></div><div class="fstep"><b>4 · Approval</b><p>Hanya sisa yang perlu dibeli</p></div><div class="fstep"><b>5 · Validate</b><p>Storekeeper menyerahkan barang, stok Store berkurang</p></div></div>
+<ol class="steps">
+<li><div><b>Buat PR:</b> <span class="path">Purchase <i>›</i> Orders <i>›</i> Purchase Requests</span> › <span class="btn">New</span>. Isi <b>Lokasi Departemen</b> (tujuan barang, mis. WH/Dapur) dan baris produk + jumlah.</div></li>
+<li><div><b>Klik <span class="btn">Cek Stok</span></b> (hanya saat Draft). Muncul ringkasan per barang: <b>Diminta</b>, <b>Ada di Store</b>, <b>Ambil dari Store</b>, <b>Perlu Dibeli</b>. Baris hijau = tidak perlu beli, kuning = masih perlu beli. Jumlah Ambil dari Store boleh dikurangi.</div></li>
+<li><div><b>Klik <span class="btn">Proses</span>.</b> Sistem membuat transfer internal <b>Store → Lokasi Departemen</b> (smart button <b>Pengambilan Store</b>) dan langsung mencadangkan stoknya. Di baris PR: <b>Diminta</b> = jumlah awal, <b>Diambil dari Store</b>, dan <b>Quantity</b> = sisa yang perlu dibeli. Ringkasan juga dicatat di chatter.</div></li>
+<li><div><b><span class="btn">Request approval</span></b> › atasan <span class="btn">Approve</span> › <span class="btn">Create RFQ</span>. RFQ hanya berisi barang yang masih perlu dibeli; barang yang sudah terpenuhi dari Store dilewati.</div></li>
+<li><div><b>Storekeeper</b> membuka <b>Pengambilan Store</b> (atau <span class="path">Inventory <i>›</i> Operations <i>›</i> Transfers</span>), menyiapkan barang, lalu <span class="btn">Validate</span>. Stok pindah dari Store ke departemen dan tercatat di kartu stok.</div></li></ol>
+<figure class="shot"><div class="bar"><span></span><span></span><span></span><code>Purchase Request › Cek Stok</code></div><a href="img/pr_cek_stok_wizard.jpg" target="_blank"><img src="img/pr_cek_stok_wizard.jpg" width="1350" height="732" loading="lazy" alt="Cek Stok PR00003 untuk Bar: Es Batu diminta 20, ada 10 di Store, perlu beli 10; Sirup dan Kopi Bubuk cukup dari Store."></a><figcaption>Cek Stok PR00003 untuk Bar: Es Batu diminta 20, ada 10 di Store, perlu beli 10; Sirup dan Kopi Bubuk cukup dari Store.</figcaption></figure>
+<figure class="shot"><div class="bar"><span></span><span></span><span></span><code>Purchase Request › PR00002</code></div><a href="img/pr_cek_stok_hasil.jpg" target="_blank"><img src="img/pr_cek_stok_hasil.jpg" width="1350" height="732" loading="lazy" alt="Setelah Proses: Beras diminta 15, diambil 10 dari Store, Quantity (perlu dibeli) 5. Smart button Pengambilan Store dan ringkasan di chatter."></a><figcaption>Setelah Proses: Beras diminta 15, diambil 10 dari Store, Quantity (perlu dibeli) 5. Smart button Pengambilan Store dan ringkasan di chatter.</figcaption></figure>
+<figure class="shot"><div class="bar"><span></span><span></span><span></span><code>Inventory › Transfers › WH/INT/00001</code></div><a href="img/pr_pengambilan_store.jpg" target="_blank"><img src="img/pr_pengambilan_store.jpg" width="1350" height="732" loading="lazy" alt="Transfer internal WH/Stock ke WH/Dapur berstatus Ready, tinggal di-Validate oleh storekeeper."></a><figcaption>Transfer internal WH/Stock ke WH/Dapur berstatus Ready, tinggal di-Validate oleh storekeeper.</figcaption></figure>
+<div class="tbl"><table><thead><tr><th>Lokasi Departemen</th><th>Jenis</th><th>Artinya</th></tr></thead><tbody>
+<tr><td>WH/Dapur, WH/Bar</td><td>Lokasi stok (internal)</td><td>Barang tetap tercatat sebagai stok di dapur/bar dan bisa di-opname.</td></tr>
+<tr><td>Pemakaian Departemen / Housekeeping, Laundry, Engineering, Front Office & Kantor (ATK)</td><td>Lokasi pemakaian</td><td>Barang dianggap langsung terpakai saat diserahkan dari Store.</td></tr></tbody></table></div>
+<div class="note ok"><span>OTOMATIS</span><div>Jika semua barang tersedia di Store, PR langsung berstatus <b>Done</b>: tidak ada yang perlu dibeli.</div></div>
+<div class="note warn"><span>PENTING</span><div>Hasil cek stok hanya sebaik data stoknya. Produk harus bertipe stok (<b>Track Inventory</b>) dan stok Store diperbarui lewat stock opname berkala.</div></div>
+<div class="note info"><span>SETUP</span><div>Lokasi departemen baru: <span class="path">Inventory <i>›</i> Configuration <i>›</i> Locations</span> › <span class="btn">New</span>, centang <b>Lokasi Departemen Hotel</b>. Fitur <b>Storage Locations</b> di Inventory Settings harus aktif.</div></div>
+</section>
+<section id="pembelian" class="sec"><div class="kicker">35 · Akuntansi & laporan</div>
 <h2>Pembelian & stok</h2>
 <ol class="steps">
 <li><div><b>Buat RFQ:</b> <span class="path">Purchase <i>›</i> Orders <i>›</i> Requests for Quotation</span> › <span class="btn">New</span>, pilih supplier, produk, jumlah, harga.</div></li>
@@ -711,7 +732,7 @@
 <figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>Purchase › Purchase Orders</code></div><a href="img/old_po_to_approve.png" target="_blank"><img src="img/old_po_to_approve.png" width="800" height="500" loading="lazy" alt="PO di atas limit menunggu approval."></a><figcaption>PO di atas limit menunggu approval.</figcaption></figure>
 <div class="note info"><span>INFO</span><div>Aktifkan approval PO di <span class="path">Purchase <i>›</i> Configuration <i>›</i> Settings</span> › Purchase Order Approval, isi Minimum Amount.</div></div>
 </section>
-<section id="faq" class="sec"><div class="kicker">35 · Referensi</div>
+<section id="faq" class="sec"><div class="kicker">36 · Referensi</div>
 <h2>FAQ & troubleshooting</h2>
 <details><summary>Kamar tidak muncul saat check-in.</summary>
 <p>Hanya kamar <b>Tersedia</b> yang bisa di-check-in. Selesaikan tugas housekeeping/maintenance kamar itu atau cek statusnya di Master Data › Kamar.</p></details>
