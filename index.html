@@ -5,7 +5,7 @@
 <link rel="icon" href="img/xerpium-logo.png">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <div class="wrap">
-<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.6</div>
+<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.7</div>
 <h1>Xerpium Hotel Management<br>Gran Malindo Hotel</h1>
 <p>Panduan lengkap dari awal sampai akhir: setup chart of accounts, pajak, dan produk; master data kamar dan harga; reservasi sampai check-out; housekeeping dan night audit; kasir restoran (POS) dengan tagihan ke kamar; cetak langsung lewat Print Direct; serta jurnal dan laporan.</p>
 <div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>36</b></span><span>Tanggal <b>23 November 2026</b></span></div></div>
@@ -730,6 +730,7 @@
 <tr><td>WH/Dapur, WH/Bar</td><td>Lokasi stok (internal)</td><td>Barang tetap tercatat sebagai stok di dapur/bar dan bisa di-opname.</td></tr>
 <tr><td>Pemakaian Departemen / Housekeeping, Laundry, Engineering, Front Office &amp; Kantor (ATK)</td><td>Lokasi pemakaian</td><td>Barang dianggap langsung terpakai saat diserahkan dari Store.</td></tr></tbody></table></div>
 <div class="note info"><span>INFO</span><div>Requester dan approver hanya melihat <b>Diminta</b>, <b>Diterima Departemen</b>, dan <b>Status Pemenuhan</b>. Kolom <b>Dari Store</b> dan <b>RFQ/PO Qty</b> hanya tampil untuk Purchasing.</div></div>
+<div class="note info"><span>HAK AKSES</span><div>Atur di <span class="path">Settings <i>›</i> Users</span>: <b>Requester</b> = Purchase Request: <i>Purchase Request User</i> (hanya melihat PR miliknya); <b>Approver</b> = Purchase Request: <i>Purchase Request Manager</i>; <b>Purchasing</b> = Purchase: <i>User</i> + Inventory: <i>User</i>, tanpa hak Purchase Request, jadi bisa memproses semua PR yang sudah di-approve tetapi tidak bisa meng-approve.</div></div>
 <div class="note warn"><span>PENTING</span><div>Saran sistem hanya sebaik data stoknya. Produk harus bertipe stok (<b>Track Inventory</b>) dan stok Store diperbarui lewat stock opname berkala.</div></div>
 <div class="note tip"><span>TIPS</span><div>Tombol <span class="btn">Create RFQ</span> bawaan tetap ada (mis. untuk menambah ke RFQ yang sudah ada). Jumlahnya otomatis hanya sisa yang belum diambil dari Store atau dibeli.</div></div>
 <div class="note info"><span>SETUP</span><div>Lokasi departemen baru: <span class="path">Inventory <i>›</i> Configuration <i>›</i> Locations</span> › <span class="btn">New</span>, centang <b>Lokasi Departemen Hotel</b>. Fitur <b>Storage Locations</b> di Inventory Settings harus aktif.</div></div>
