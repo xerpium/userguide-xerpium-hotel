@@ -5,7 +5,7 @@
 <link rel="icon" href="img/xerpium-logo.png">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <div class="wrap">
-<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.8</div>
+<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.9</div>
 <h1>Xerpium Hotel Management<br>Gran Malindo Hotel</h1>
 <p>Panduan lengkap dari awal sampai akhir: setup chart of accounts, pajak, dan produk; master data kamar dan harga; reservasi sampai check-out; housekeeping dan night audit; kasir restoran (POS) dengan tagihan ke kamar; cetak langsung lewat Print Direct; serta jurnal dan laporan.</p>
 <div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>37</b></span><span>Tanggal <b>25 November 2026</b></span></div></div>
@@ -364,12 +364,24 @@
 <li><div><b>Tab Banquet Detail</b> (persiapan: note pad, mineral water, meja registrasi, …) dan <b>Instruksi Departemen</b> (departemen, instruksi, penanggung jawab).</div></li>
 <li><div><b>Tab Tanda Tangan:</b> Prepare By, Approve By (2 orang), Acknowledge By, berikut jabatannya. Bisa diketik bebas atau dipilih dari user.</div></li>
 <li><div><span class="btn">Ajukan Approval</span> › <span class="btn">Approve</span> (Supervisor) › <span class="btn">Acknowledge</span> (Accountant). Saat Acknowledge, setiap penanggung jawab mendapat <b>To-Do</b> berisi instruksinya. Setelah event: <span class="btn">Selesai</span>.</div></li>
-<li><div><b>Cetak:</b> <span class="btn">⚙ Actions</span> › Print › <b>Banquet Event Order (BEO)</b> → PDF satu halaman, siap dibagikan.</div></li></ol>
+<li><div><b>Cetak:</b> <span class="btn">⚙ Actions</span> › Print › <b>Banquet Event Order (BEO)</b> → PDF satu halaman, siap dibagikan.</div></li>
+<li><div><b>Tagih:</b> lihat bagian <i>Tagihan &amp; invoice event</i> di bawah.</div></li></ol>
 <figure class="shot"><div class="bar"><span></span><span></span><span></span><code>Front Desk › Banquet Event Order (BEO)</code></div><a href="img/beo_form.jpg" target="_blank"><img src="img/beo_form.jpg" width="1350" height="732" loading="lazy" alt="BEO 0004/SM/LOA-HGM/XI/2026 Inspektorat Padang Sidempuan: 20-22 November 2026, Balairung Meeting Room, 37 pax, 19 kamar, status Dikonfirmasi."></a><figcaption>BEO 0004/SM/LOA-HGM/XI/2026 Inspektorat Padang Sidempuan: 20-22 November 2026, Balairung Meeting Room, 37 pax, 19 kamar, status Dikonfirmasi.</figcaption></figure>
 <figure class="shot"><div class="bar"><span></span><span></span><span></span><code>BEO › Kitchen &amp; Restaurant</code></div><a href="img/beo_fnb.jpg" target="_blank"><img src="img/beo_fnb.jpg" width="1350" height="732" loading="lazy" alt="Jadwal F&amp;B per hari: coffee break, lunch, dinner, breakfast; Sabtu sesi Halfday Meeting dengan dinner tentative."></a><figcaption>Jadwal F&amp;B per hari: coffee break, lunch, dinner, breakfast; Sabtu sesi Halfday Meeting dengan dinner tentative.</figcaption></figure>
 <figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>PDF Banquet Event Order</code></div><a href="img/beo_report.jpg" target="_blank"><img src="img/beo_report.jpg" width="1200" height="1121" loading="lazy" alt="Cetakan PDF BEO: kitchen &amp; restaurant, rincian paket, banquet detail, instruksi departemen, dan tanda tangan."></a><figcaption>Cetakan PDF BEO: kitchen &amp; restaurant, rincian paket, banquet detail, instruksi departemen, dan tanda tangan.</figcaption></figure>
 <div class="note ok"><span>OTOMATIS</span><div>Venue yang sudah dipakai BEO lain pada tanggal dan jam yang sama <b>ditolak</b> saat diajukan, jadi tidak ada double booking ruang meeting.</div></div>
-<div class="note info"><span>INFO</span><div>Tagihan kamar berjalan lewat Grup &amp; Allotment. Rincian harga paket di tab Harga adalah informasi untuk FO/Cashier/Accounting dan belum otomatis menjadi invoice.</div></div>
+<h3>Tagihan &amp; invoice event</h3>
+<p>Tab <b>Tagihan</b> berisi apa yang ditagih ke instansi. Akun pendapatan mengikuti produknya, jadi di laporan Rugi Laba kamar, makanan, dan ruang meeting langsung terpisah.</p>
+<div class="tbl"><table><thead><tr><th>Produk</th><th>Akun pendapatan</th></tr></thead><tbody>
+<tr><td>[EVT-ROOM] Paket Event - Kamar inc. Breakfast</td><td>500.1 Pendapatan Kamar</td></tr>
+<tr><td>[EVT-LD] Paket Event - Lunch / Dinner, [EVT-CB] Paket Event - Coffee Break</td><td>500.2 Pendapatan Makanan</td></tr>
+<tr><td>[EVT-MR] Sewa Meeting Room (Balairung)</td><td>500.6 Pendapatan Balairung Malindo</td></tr></tbody></table></div>
+<ol class="steps">
+<li><div><b>Isi baris tagihan:</b> produk, keterangan, qty (mis. 37 pax), harga satuan, pajak (Tax &amp; Service 21% inc). Kamar yang tidak di-check-in lewat sistem bisa diisi dengan <span class="btn">Isi Baris Kamar dari BEO</span>.</div></li>
+<li><div><b>DP (opsional):</b> isi DP (%), lalu <span class="btn">Terima DP</span>, pilih jurnal bank/kas, dan Confirm. DP tercatat di BEO (smart button Pembayaran).</div></li>
+<li><div>Setelah event: <span class="btn">Buat Invoice Event</span> (Accountant). Terbentuk <b>satu invoice</b> ke instansi (city ledger), lalu cek dan <span class="btn">Confirm</span>. DP otomatis memotong tagihan; sisa menjadi piutang.</div></li></ol>
+<div class="note info"><span>MASTER BILL</span><div>Jika <b>Satu Invoice (Master Bill)</b> dicentang dan tamu rombongan di-check-in lewat Grup &amp; Allotment, tagihan kamar <b>tidak</b> ditagih per kamar saat check-out. Semua folio kamar ikut masuk Invoice Event, jadi instansi menerima satu invoice saja. Biaya pribadi tamu (minibar, laundry) tetap ditagih ke tamu. Invoice Event baru bisa dibuat setelah semua kamar check-out.</div></div>
+<figure class="shot"><div class="bar"><span></span><span></span><span></span><code>BEO › Tagihan</code></div><a href="img/beo_tagihan.jpg" target="_blank"><img src="img/beo_tagihan.jpg" width="1350" height="732" loading="lazy" alt="Tab Tagihan BEO 0004: 8 baris paket per pax dengan akun pendapatan 500.1, 500.2, 500.6; total Rp 31.265.000, DP 30%."></a><figcaption>Tab Tagihan BEO 0004: 8 baris paket per pax dengan akun pendapatan 500.1, 500.2, 500.6; total Rp 31.265.000, DP 30%.</figcaption></figure>
 </section>
 <section id="diskon" class="sec"><div class="kicker">16 · Front desk</div>
 <h2>Minta diskon per kamar</h2>
