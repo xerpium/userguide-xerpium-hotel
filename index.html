@@ -5,10 +5,10 @@
 <link rel="icon" href="img/xerpium-logo.png">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <div class="wrap">
-<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.7</div>
+<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 2.8</div>
 <h1>Xerpium Hotel Management<br>Gran Malindo Hotel</h1>
 <p>Panduan lengkap dari awal sampai akhir: setup chart of accounts, pajak, dan produk; master data kamar dan harga; reservasi sampai check-out; housekeeping dan night audit; kasir restoran (POS) dengan tagihan ke kamar; cetak langsung lewat Print Direct; serta jurnal dan laporan.</p>
-<div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>36</b></span><span>Tanggal <b>23 November 2026</b></span></div></div>
+<div class="meta"><span>Platform <b>Odoo 18 · Xerpium</b></span><span>Bab <b>37</b></span><span>Tanggal <b>25 November 2026</b></span></div></div>
 <img src="img/xerpium-logo.png" alt="Xerpium">
 </header>
 <div class="layout">
@@ -31,32 +31,33 @@
 <a href="#reservasi"><span>12</span>Reservasi</a>
 <a href="#tapechart"><span>13</span>Tape chart</a>
 <a href="#grup"><span>14</span>Grup & allotment</a>
-<a href="#diskon"><span>15</span>Minta diskon per kamar</a>
-<a href="#checkin"><span>16</span>Check-in & folio</a>
-<a href="#checkout"><span>17</span>Check-out & invoice</a>
-<a href="#batal"><span>18</span>Pembatalan & no-show</a>
+<a href="#beo"><span>15</span>Banquet Event Order (BEO)</a>
+<a href="#diskon"><span>16</span>Minta diskon per kamar</a>
+<a href="#checkin"><span>17</span>Check-in & folio</a>
+<a href="#checkout"><span>18</span>Check-out & invoice</a>
+<a href="#batal"><span>19</span>Pembatalan & no-show</a>
 <div class="tg">Operasional</div>
-<a href="#housekeeping"><span>19</span>Housekeeping</a>
-<a href="#maintenance"><span>20</span>Maintenance</a>
-<a href="#roomservice"><span>21</span>Room service & F&B (dari hotel)</a>
-<a href="#nightaudit"><span>22</span>Night audit</a>
+<a href="#housekeeping"><span>20</span>Housekeeping</a>
+<a href="#maintenance"><span>21</span>Maintenance</a>
+<a href="#roomservice"><span>22</span>Room service & F&B (dari hotel)</a>
+<a href="#nightaudit"><span>23</span>Night audit</a>
 <div class="tg">POS & restoran</div>
-<a href="#pos-setup"><span>23</span>Setup Point of Sale</a>
-<a href="#pos-transaksi"><span>24</span>Transaksi POS & tagihan ke kamar</a>
-<a href="#printdirect"><span>25</span>Print Direct: host & printer</a>
-<a href="#printdirect-pos"><span>26</span>Print Direct untuk POS & laporan</a>
+<a href="#pos-setup"><span>24</span>Setup Point of Sale</a>
+<a href="#pos-transaksi"><span>25</span>Transaksi POS & tagihan ke kamar</a>
+<a href="#printdirect"><span>26</span>Print Direct: host & printer</a>
+<a href="#printdirect-pos"><span>27</span>Print Direct untuk POS & laporan</a>
 <div class="tg">Akuntansi & laporan</div>
-<a href="#pembayaran"><span>27</span>Deposit, pembayaran & city ledger</a>
-<a href="#komisi"><span>28</span>Komisi travel agent</a>
-<a href="#jurnal"><span>29</span>Jurnal akuntansi otomatis</a>
-<a href="#daily"><span>30</span>Daily transaction (kas & bank harian)</a>
-<a href="#laporan"><span>31</span>Laporan</a>
-<a href="#crm"><span>32</span>CRM forecast otomatis</a>
-<a href="#ota"><span>33</span>Channel manager (OTA)</a>
-<a href="#pr-stok"><span>34</span>Purchase Request: Store atau beli</a>
-<a href="#pembelian"><span>35</span>Pembelian & stok</a>
+<a href="#pembayaran"><span>28</span>Deposit, pembayaran & city ledger</a>
+<a href="#komisi"><span>29</span>Komisi travel agent</a>
+<a href="#jurnal"><span>30</span>Jurnal akuntansi otomatis</a>
+<a href="#daily"><span>31</span>Daily transaction (kas & bank harian)</a>
+<a href="#laporan"><span>32</span>Laporan</a>
+<a href="#crm"><span>33</span>CRM forecast otomatis</a>
+<a href="#ota"><span>34</span>Channel manager (OTA)</a>
+<a href="#pr-stok"><span>35</span>Purchase Request: Store atau beli</a>
+<a href="#pembelian"><span>36</span>Pembelian & stok</a>
 <div class="tg">Referensi</div>
-<a href="#faq"><span>36</span>FAQ & troubleshooting</a>
+<a href="#faq"><span>37</span>FAQ & troubleshooting</a>
 </nav>
 <main>
 <section id="alur" class="sec"><div class="kicker">01 · Dasar</div>
@@ -79,12 +80,12 @@
 <h3>Modul yang dipakai</h3>
 <div class="tbl "><table><thead>
 <tr><th>Modul</th><th>Untuk apa</th><th>Bab</th></tr></thead><tbody>
-<tr><td><b>Hotel Management</b></td><td>Reservasi, tape chart, folio, housekeeping, maintenance, night audit, laporan hotel</td><td>4, 7–22, 27–31</td></tr>
-<tr><td><b>Point of Sale</b></td><td>Kasir restoran; tagihan bisa dibebankan ke folio kamar tamu</td><td>23–24</td></tr>
-<tr><td><b>Print Direct</b></td><td>Cetak struk POS, tiket dapur, dan laporan langsung ke printer lewat HP/tablet Android</td><td>25–26</td></tr>
-<tr><td><b>Accounting</b></td><td>Chart of accounts, pajak Tax & Service 21%, jurnal, invoice, laporan keuangan</td><td>5, 27–31</td></tr>
-<tr><td><b>CRM</b></td><td>Forecast pendapatan dari reservasi (otomatis)</td><td>32</td></tr>
-<tr><td><b>Purchase & Inventory</b></td><td>Purchase request (purchasing memilih ambil dari Store atau beli), pembelian bahan dan stok</td><td>34–35</td></tr></tbody></table></div>
+<tr><td><b>Hotel Management</b></td><td>Reservasi, tape chart, folio, housekeeping, maintenance, night audit, laporan hotel</td><td>4, 7–23, 28–32</td></tr>
+<tr><td><b>Point of Sale</b></td><td>Kasir restoran; tagihan bisa dibebankan ke folio kamar tamu</td><td>24–25</td></tr>
+<tr><td><b>Print Direct</b></td><td>Cetak struk POS, tiket dapur, dan laporan langsung ke printer lewat HP/tablet Android</td><td>26–27</td></tr>
+<tr><td><b>Accounting</b></td><td>Chart of accounts, pajak Tax & Service 21%, jurnal, invoice, laporan keuangan</td><td>5, 28–32</td></tr>
+<tr><td><b>CRM</b></td><td>Forecast pendapatan dari reservasi (otomatis)</td><td>33</td></tr>
+<tr><td><b>Purchase & Inventory</b></td><td>Purchase request (purchasing memilih ambil dari Store atau beli), pembelian bahan dan stok</td><td>35–36</td></tr></tbody></table></div>
 </section>
 <section id="akses" class="sec"><div class="kicker">02 · Dasar</div>
 <h2>Peran & hak akses</h2>
@@ -350,7 +351,27 @@
 <li><div><b>Rilis</b> — setelah cut-off kamar yang tidak terisi dilepas otomatis, atau manual dengan <span class="btn">Rilis Sisa Blok</span>.</div></li></ol>
 <figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>Front Desk › Grup & Allotment</code></div><a href="img/old_group_form.png" target="_blank"><img src="img/old_group_form.png" width="800" height="715" loading="lazy" alt="Grup dengan blok kamar, batas rilis, dan master bill."></a><figcaption>Grup dengan blok kamar, batas rilis, dan master bill.</figcaption></figure>
 </section>
-<section id="diskon" class="sec"><div class="kicker">15 · Front desk</div>
+<section id="beo" class="sec"><div class="kicker">15 · Front desk</div>
+<h2>Banquet Event Order (BEO)</h2>
+<p class="lead">BEO adalah lembar kerja event (meeting, wedding, gathering) yang dibagikan ke semua departemen: jadwal makan untuk Kitchen &amp; Restaurant, rincian paket untuk FO/Cashier/Accounting, persiapan banquet, dan instruksi FO, Housekeeping, Engineering, serta Security.</p>
+<div class="flow"><div class="fstep"><b>1 · Sales buat BEO</b><p>Instansi, tanggal, venue, pax, paket</p></div><div class="fstep"><b>2 · Ajukan</b><p>Venue dicek bentrok</p></div><div class="fstep"><b>3 · Approve</b><p>F&amp;B Manager / FO Spv</p></div><div class="fstep"><b>4 · Acknowledge</b><p>Chief Accounting; To-Do ke tiap departemen</p></div><div class="fstep"><b>5 · Cetak &amp; jalan</b><p>PDF BEO dibagikan, event berjalan</p></div></div>
+<ol class="steps">
+<li><div><b>Siapkan venue</b> sekali saja: <span class="path">Hotel Management <i>›</i> Master Data <i>›</i> Venue / Ruang Meeting</span>, mis. <i>Balairung Meeting Room</i>.</div></li>
+<li><div><b>Buat BEO:</b> <span class="path">Front Desk <i>›</i> Banquet Event Order (BEO)</span> › <span class="btn">New</span>. Isi Company/Instansi, Event Title, Contact Person, Banquet Sales, tanggal &amp; jam, Package, Venue, Lay Out, Head Table, dan jumlah pax. Nomor BEO terisi otomatis, contoh <b>0004/SM/LOA-HGM/XI/2026</b>.</div></li>
+<li><div><b>Tab Kitchen &amp; Restaurant:</b> satu baris per sesi makan (tanggal, jenis, nama sesi, jam, pax). Isi <b>Sesi Hari Itu</b> (mis. <i>Halfday Meeting</i>) bila perlu, centang <b>Tentative</b> untuk jam yang belum pasti.</div></li>
+<li><div><b>Tab Kamar:</b> tipe kamar, jumlah, dan harga per malam, lalu <span class="btn">Buat Grup Kamar</span>. Kamar langsung diblok di <a href="#grup">Grup &amp; Allotment</a>, tagihan kamar ke instansi; rooming list dan check-in berjalan dari sana.</div></li>
+<li><div><b>Tab Harga:</b> <i>Tambah paket / section</i> untuk judul paket (mis. <i>FULLBOARD TWIN SHARING Rp 300.000/pax</i>), lalu rinciannya: Room inc. breakfast, Lunch/Dinner, Coffee Break, Meeting Room.</div></li>
+<li><div><b>Tab Banquet Detail</b> (persiapan: note pad, mineral water, meja registrasi, …) dan <b>Instruksi Departemen</b> (departemen, instruksi, penanggung jawab).</div></li>
+<li><div><b>Tab Tanda Tangan:</b> Prepare By, Approve By (2 orang), Acknowledge By, berikut jabatannya. Bisa diketik bebas atau dipilih dari user.</div></li>
+<li><div><span class="btn">Ajukan Approval</span> › <span class="btn">Approve</span> (Supervisor) › <span class="btn">Acknowledge</span> (Accountant). Saat Acknowledge, setiap penanggung jawab mendapat <b>To-Do</b> berisi instruksinya. Setelah event: <span class="btn">Selesai</span>.</div></li>
+<li><div><b>Cetak:</b> <span class="btn">⚙ Actions</span> › Print › <b>Banquet Event Order (BEO)</b> → PDF satu halaman, siap dibagikan.</div></li></ol>
+<figure class="shot"><div class="bar"><span></span><span></span><span></span><code>Front Desk › Banquet Event Order (BEO)</code></div><a href="img/beo_form.jpg" target="_blank"><img src="img/beo_form.jpg" width="1350" height="732" loading="lazy" alt="BEO 0004/SM/LOA-HGM/XI/2026 Inspektorat Padang Sidempuan: 20-22 November 2026, Balairung Meeting Room, 37 pax, 19 kamar, status Dikonfirmasi."></a><figcaption>BEO 0004/SM/LOA-HGM/XI/2026 Inspektorat Padang Sidempuan: 20-22 November 2026, Balairung Meeting Room, 37 pax, 19 kamar, status Dikonfirmasi.</figcaption></figure>
+<figure class="shot"><div class="bar"><span></span><span></span><span></span><code>BEO › Kitchen &amp; Restaurant</code></div><a href="img/beo_fnb.jpg" target="_blank"><img src="img/beo_fnb.jpg" width="1350" height="732" loading="lazy" alt="Jadwal F&amp;B per hari: coffee break, lunch, dinner, breakfast; Sabtu sesi Halfday Meeting dengan dinner tentative."></a><figcaption>Jadwal F&amp;B per hari: coffee break, lunch, dinner, breakfast; Sabtu sesi Halfday Meeting dengan dinner tentative.</figcaption></figure>
+<figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>PDF Banquet Event Order</code></div><a href="img/beo_report.jpg" target="_blank"><img src="img/beo_report.jpg" width="1200" height="1121" loading="lazy" alt="Cetakan PDF BEO: kitchen &amp; restaurant, rincian paket, banquet detail, instruksi departemen, dan tanda tangan."></a><figcaption>Cetakan PDF BEO: kitchen &amp; restaurant, rincian paket, banquet detail, instruksi departemen, dan tanda tangan.</figcaption></figure>
+<div class="note ok"><span>OTOMATIS</span><div>Venue yang sudah dipakai BEO lain pada tanggal dan jam yang sama <b>ditolak</b> saat diajukan, jadi tidak ada double booking ruang meeting.</div></div>
+<div class="note info"><span>INFO</span><div>Tagihan kamar berjalan lewat Grup &amp; Allotment. Rincian harga paket di tab Harga adalah informasi untuk FO/Cashier/Accounting dan belum otomatis menjadi invoice.</div></div>
+</section>
+<section id="diskon" class="sec"><div class="kicker">16 · Front desk</div>
 <h2>Minta diskon per kamar</h2>
 <p class="lead">Diskon kamar dengan persetujuan supervisor. Setiap kamar bisa punya diskon sendiri: persen atau rupiah per malam.</p>
 <p>Front office boleh menawarkan harga di bawah harga standar, tetapi harga baru berlaku setelah disetujui <b>Supervisor / Duty Manager</b>.</p>
@@ -382,7 +403,7 @@
 <div class="note warn"><span>PENTING</span><div>Malam yang sudah diposting ke folio tidak ikut berubah. Ajukan diskon <b>sebelum check-in</b> bila posting tagihan kamar diatur "Saat check-in". Diskon yang melebihi harga standar (atau lebih dari 100%) ditolak.</div></div>
 <div class="note info"><span>INFO</span><div>Kolom <b>Perlu Approval</b> menandai kamar yang diskonnya di atas batas "Diskon Tanpa Approval (%)". Kolom <b>Diskon Efektif (%)</b> bisa dimunculkan dari ikon ⇄ di tabel.</div></div>
 </section>
-<section id="checkin" class="sec"><div class="kicker">16 · Front desk</div>
+<section id="checkin" class="sec"><div class="kicker">17 · Front desk</div>
 <h2>Check-in & folio</h2>
 <p class="lead">Menerima tamu dan mengelola tagihannya selama menginap.</p>
 <h3>Check-in</h3>
@@ -401,9 +422,9 @@
 <tr><td><span class="btn">Catat Pembayaran</span></td><td>Menerima pembayaran sebagian/penuh kapan saja</td></tr>
 <tr><td><span class="btn">Buat Invoice</span></td><td>Membuat invoice dari folio</td></tr>
 <tr><td><span class="btn">Check-Out</span></td><td>Proses check-out (lihat bab berikutnya)</td></tr></tbody></table></div>
-<div class="note info"><span>INFO</span><div>Tagihan dari POS restoran yang dibebankan ke kamar masuk ke folio sebagai baris <b>[POS …]</b> (lihat bab 24).</div></div>
+<div class="note info"><span>INFO</span><div>Tagihan dari POS restoran yang dibebankan ke kamar masuk ke folio sebagai baris <b>[POS …]</b> (lihat bab 25).</div></div>
 </section>
-<section id="checkout" class="sec"><div class="kicker">17 · Front desk</div>
+<section id="checkout" class="sec"><div class="kicker">18 · Front desk</div>
 <h2>Check-out & invoice</h2>
 <p class="lead">Pembayaran akhir, invoice, dan kwitansi.</p>
 <ol class="steps">
@@ -417,7 +438,7 @@
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Accounting › Invoices › INV/2026/00007</code></div><a href="img/invoice_form.jpg" target="_blank"><img src="img/invoice_form.jpg" width="1350" height="896" loading="lazy" alt="Invoice dari folio: satu baris produk paket &quot;Kamar + Sarapan&quot; untuk tamu Pak Jibet."></a><figcaption>Invoice dari folio: satu baris produk paket "Kamar + Sarapan" untuk tamu Pak Jibet.</figcaption></figure>
 <div class="note ok"><span>HASIL</span><div>Folio otomatis menjadi <b>Lunas</b> setelah semua invoicenya lunas. Bila folio punya <b>Ditagih ke</b>, terbentuk dua invoice: ke perusahaan (city ledger) dan ke tamu.</div></div>
 </section>
-<section id="batal" class="sec"><div class="kicker">18 · Front desk</div>
+<section id="batal" class="sec"><div class="kicker">19 · Front desk</div>
 <h2>Pembatalan & no-show</h2>
 <ol class="steps">
 <li><div><b>Klik <span class="btn">Batalkan</span> atau <span class="btn">No Show</span> di reservasi.</b> Wizard menampilkan kebijakan, deposit, dan biaya sesuai kebijakan.</div></li>
@@ -426,7 +447,7 @@
 <figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>Reservasi › Batalkan</code></div><a href="img/old_cancel_wizard.png" target="_blank"><img src="img/old_cancel_wizard.png" width="800" height="500" loading="lazy" alt="Wizard pembatalan: biaya malam pertama karena sudah lewat masa batal gratis."></a><figcaption>Wizard pembatalan: biaya malam pertama karena sudah lewat masa batal gratis.</figcaption></figure>
 <div class="note warn"><span>PENTING</span><div>Bila deposit lebih besar dari biaya, sistem membuat to-do <b>Refund deposit</b>. Kembalikan selisihnya lewat pembayaran keluar di Accounting.</div></div>
 </section>
-<section id="housekeeping" class="sec"><div class="kicker">19 · Operasional</div>
+<section id="housekeeping" class="sec"><div class="kicker">20 · Operasional</div>
 <h2>Housekeeping</h2>
 <p class="lead">Jadwal kebersihan kamar.</p>
 <p>Buka <span class="path">Operasional <i>›</i> Housekeeping</span>. Jadwal harian dibuat otomatis setiap pagi: kamar Kotor mendapat pembersihan check-out (prioritas), kamar Terisi mendapat pembersihan harian.</p>
@@ -437,7 +458,7 @@
 <li><div><b>Per kamar:</b> <span class="btn">Mulai</span> → <span class="btn">Selesai</span> (→ <span class="btn">Inspeksi</span> bila wajib inspeksi).</div></li>
 <li><div><b>Kamar kembali Tersedia</b> begitu tugasnya selesai/diinspeksi.</div></li></ol>
 </section>
-<section id="maintenance" class="sec"><div class="kicker">20 · Operasional</div>
+<section id="maintenance" class="sec"><div class="kicker">21 · Operasional</div>
 <h2>Maintenance</h2>
 <p>Buka <span class="path">Operasional <i>›</i> Maintenance</span>, klik <span class="btn">New</span>.</p>
 <ol class="steps">
@@ -447,7 +468,7 @@
 <li><div><b>Isi penyelesaian, klik <span class="btn">Selesai</span> —</b> kamar kembali Tersedia.</div></li></ol>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Operasional › Maintenance</code></div><a href="img/maintenance_list.jpg" target="_blank"><img src="img/maintenance_list.jpg" width="1350" height="250" loading="lazy" alt="Work order MNT/2026/00001 kamar 101, corrective, selesai."></a><figcaption>Work order MNT/2026/00001 kamar 101, corrective, selesai.</figcaption></figure>
 </section>
-<section id="roomservice" class="sec"><div class="kicker">21 · Operasional</div>
+<section id="roomservice" class="sec"><div class="kicker">22 · Operasional</div>
 <h2>Room service & F&B (dari hotel)</h2>
 <p>Untuk pesanan yang dicatat front office (bukan lewat kasir POS). Buka <span class="path">Operasional <i>›</i> Room Service & F&B</span>, klik <span class="btn">New</span>.</p>
 <ol class="steps">
@@ -455,9 +476,9 @@
 <li><div><b>Pilih Tipe Layanan</b> (F&B, Laundry, Spa, Transport, …) dan tambah item.</div></li>
 <li><div><b><span class="btn">Konfirmasi</span>, kabari dapur/laundry,</b> lalu <span class="btn">Terkirim</span> setelah diantar.</div></li>
 <li><div><b><span class="btn">Post ke Folio</span> —</b> tagihan masuk folio dan ikut invoice saat check-out.</div></li></ol>
-<div class="note tip"><span>TIPS</span><div>Untuk restoran dengan kasir, gunakan POS dan metode bayar <b>Tagihan ke Folio Kamar</b> (bab 24). Tiket dapur bisa dicetak otomatis lewat Print Direct.</div></div>
+<div class="note tip"><span>TIPS</span><div>Untuk restoran dengan kasir, gunakan POS dan metode bayar <b>Tagihan ke Folio Kamar</b> (bab 25). Tiket dapur bisa dicetak otomatis lewat Print Direct.</div></div>
 </section>
-<section id="nightaudit" class="sec"><div class="kicker">22 · Operasional</div>
+<section id="nightaudit" class="sec"><div class="kicker">23 · Operasional</div>
 <h2>Night audit</h2>
 <p>Night audit berjalan otomatis setiap malam (sekitar 01:30) untuk tanggal bisnis kemarin. Supervisor bisa menjalankannya manual di <span class="path">Operasional <i>›</i> Night Audit</span>.</p>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Operasional › Night Audit</code></div><a href="img/night_audit_form.jpg" target="_blank"><img src="img/night_audit_form.jpg" width="1350" height="440" loading="lazy" alt="Hasil night audit 12/11/2026: malam diposting, pendapatan kamar, 5 kamar terisi, 0 no-show."></a><figcaption>Hasil night audit 12/11/2026: malam diposting, pendapatan kamar, 5 kamar terisi, 0 no-show.</figcaption></figure>
@@ -466,7 +487,7 @@
 <li><div><b>Tandai no-show</b> reservasi terkonfirmasi yang tidak datang, dengan biaya sesuai kebijakan.</div></li>
 <li><div><b>Simpan rekap</b> malam diposting, pendapatan kamar, kamar terisi, daftar no-show.</div></li></ol>
 </section>
-<section id="pos-setup" class="sec"><div class="kicker">23 · POS & restoran</div>
+<section id="pos-setup" class="sec"><div class="kicker">24 · POS & restoran</div>
 <h2>Setup Point of Sale</h2>
 <p class="lead">Konfigurasi kasir restoran dan metode pembayaran.</p>
 <p>Kasir restoran memakai aplikasi <b>Point of Sale</b>. Database sudah punya satu POS: <b>Restoran Gran Malindo</b>.</p>
@@ -487,12 +508,12 @@
 <div class="tbl "><table><thead>
 <tr><th>Pengaturan</th><th>Keterangan</th></tr></thead><tbody>
 <tr><td>Is a Bar/Restaurant</td><td>Aktifkan bila memakai denah meja & kirim order ke dapur</td></tr>
-<tr><td>Preparation Printers</td><td>Printer dapur/bar (bisa Print Direct, bab 26)</td></tr>
-<tr><td>Print Direct Receipt Printer</td><td>Printer struk kasir lewat Android (bab 26)</td></tr>
+<tr><td>Preparation Printers</td><td>Printer dapur/bar (bisa Print Direct, bab 27)</td></tr>
+<tr><td>Print Direct Receipt Printer</td><td>Printer struk kasir lewat Android (bab 27)</td></tr>
 <tr><td>Automatic Receipt Printing</td><td>Struk tercetak otomatis setelah bayar</td></tr></tbody></table></div>
 <div class="note info"><span>INFO</span><div>Beberapa pengaturan hanya bisa diubah saat sesi POS ditutup. Tutup sesi dulu bila muncul pesan kuning "A session is currently opened".</div></div>
 </section>
-<section id="pos-transaksi" class="sec"><div class="kicker">24 · POS & restoran</div>
+<section id="pos-transaksi" class="sec"><div class="kicker">25 · POS & restoran</div>
 <h2>Transaksi POS & tagihan ke kamar</h2>
 <p class="lead">Kasir restoran dan pembebanan ke kamar tamu.</p>
 <ol class="steps">
@@ -509,7 +530,7 @@
 <div class="note warn"><span>PENTING</span><div>Tagihan ke kamar hanya bisa untuk tamu yang <b>sudah check-in</b> (punya folio terbuka). Bila customer belum dipilih atau tamu tidak punya folio terbuka, POS menolak pembayaran.</div></div>
 <div class="note ok"><span>HASIL</span><div>Pesanan masuk folio sebagai baris <b>[POS …]</b>. Saat check-out, baris ini tidak ditagih dua kali: pembayaran tamu direkonsiliasi dengan piutang POS.</div></div>
 </section>
-<section id="printdirect" class="sec"><div class="kicker">25 · POS & restoran</div>
+<section id="printdirect" class="sec"><div class="kicker">26 · POS & restoran</div>
 <h2>Print Direct: host & printer</h2>
 <p class="lead">Mencetak langsung ke printer lewat HP/tablet Android.</p>
 <p><b>Print Direct</b> mencetak struk POS, tiket dapur, dan laporan Odoo langsung ke printer thermal/label lewat HP atau tablet Android. Tidak perlu PC, IoT Box, atau dialog cetak.</p>
@@ -548,7 +569,7 @@
 <p>Printer yang ditambahkan di aplikasi muncul otomatis di <span class="path">Print Direct <i>›</i> Configuration <i>›</i> Printers</span>. Di tab <b>Routing</b>, pilih laporan yang dicetak ke printer itu (misalnya Folio / Bill, Kwitansi Pembayaran).</p>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Print Direct › Printers</code></div><a href="img/pd_printer_form.jpg" target="_blank"><img src="img/pd_printer_form.jpg" width="1170" height="640" loading="lazy" alt="Form printer Kasir Restoran: perangkat (Bluetooth), format keluaran (ESC/POS 80 mm), dan routing laporan. Tombol Print Test Page menguji jalur Odoo → HP → printer."></a><figcaption>Form printer Kasir Restoran: perangkat (Bluetooth), format keluaran (ESC/POS 80 mm), dan routing laporan. Tombol Print Test Page menguji jalur Odoo → HP → printer.</figcaption></figure>
 </section>
-<section id="printdirect-pos" class="sec"><div class="kicker">26 · POS & restoran</div>
+<section id="printdirect-pos" class="sec"><div class="kicker">27 · POS & restoran</div>
 <h2>Print Direct untuk POS & laporan</h2>
 <p class="lead">Struk kasir, tiket dapur, dan laporan langsung ke printer.</p>
 <h3>1. Printer struk POS</h3>
@@ -578,7 +599,7 @@
 <tr><td>Failed</td><td>Gagal; buka tugas untuk melihat error lalu <span class="btn">Retry</span></td></tr>
 <tr><td>Cancelled</td><td>Dibatalkan sebelum tercetak</td></tr></tbody></table></div>
 </section>
-<section id="pembayaran" class="sec"><div class="kicker">27 · Akuntansi & laporan</div>
+<section id="pembayaran" class="sec"><div class="kicker">28 · Akuntansi & laporan</div>
 <h2>Deposit, pembayaran & city ledger</h2>
 <h3>Deposit & pembayaran</h3>
 <ol class="steps">
@@ -594,7 +615,7 @@
 <figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>Laporan › City Ledger</code></div><a href="img/old_city_ledger_list.png" target="_blank"><img src="img/old_city_ledger_list.png" width="800" height="300" loading="lazy" alt="Invoice city ledger yang belum lunas."></a><figcaption>Invoice city ledger yang belum lunas.</figcaption></figure>
 <div class="note warn"><span>PENTING</span><div>Isi <b>Limit Kredit Hotel</b> pada data perusahaan. Invoice city ledger ditolak bila piutang perusahaan melebihi limit.</div></div>
 </section>
-<section id="komisi" class="sec"><div class="kicker">28 · Akuntansi & laporan</div>
+<section id="komisi" class="sec"><div class="kicker">29 · Akuntansi & laporan</div>
 <h2>Komisi travel agent</h2>
 <p>Komisi dibuat otomatis saat tamu yang dibawa agen <b>check-out</b>. Buka <span class="path">Laporan <i>›</i> Komisi Travel Agent</span>.</p>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Laporan › Komisi Travel Agent</code></div><a href="img/agent_commission_list.jpg" target="_blank"><img src="img/agent_commission_list.jpg" width="1350" height="320" loading="lazy" alt="Komisi Travel AAA: satu reservasi persentase 10% (Rp 70.000) dan satu fixed amount (Rp 50.000), sudah ditagihkan."></a><figcaption>Komisi Travel AAA: satu reservasi persentase 10% (Rp 70.000) dan satu fixed amount (Rp 50.000), sudah ditagihkan.</figcaption></figure>
@@ -605,7 +626,7 @@
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Reservasi › Sumber Booking</code></div><a href="img/commission_reservation.jpg" target="_blank"><img src="img/commission_reservation.jpg" width="1600" height="861" loading="lazy" alt="Tipe dan nilai komisi bisa disesuaikan per reservasi."></a><figcaption>Tipe dan nilai komisi bisa disesuaikan per reservasi.</figcaption></figure>
 <div class="note info"><span>INFO</span><div>Persentase dihitung dari pendapatan kamar (malam yang benar-benar dipakai, sebelum pajak). Fixed Amount = tepat nominal yang diisi, sekali per reservasi. Reservasi batal/no-show tidak mendapat komisi.</div></div>
 </section>
-<section id="jurnal" class="sec"><div class="kicker">29 · Akuntansi & laporan</div>
+<section id="jurnal" class="sec"><div class="kicker">30 · Akuntansi & laporan</div>
 <h2>Jurnal akuntansi otomatis</h2>
 <p class="lead">Ke mana uang dan pendapatan tercatat.</p>
 <p>Setiap transaksi hotel menghasilkan jurnal di <span class="path">Accounting <i>›</i> Accounting <i>›</i> Journal Entries</span>. Kode akun di bawah sesuai chart of accounts database ini.</p>
@@ -641,7 +662,7 @@
 </div>
 <div class="note info"><span>INFO</span><div>Biaya pembatalan/no-show dan extra bed masuk ke 500.5 Pendapatan Lain-lain Operasional (kategori Layanan Hotel).</div></div>
 </section>
-<section id="daily" class="sec"><div class="kicker">30 · Akuntansi & laporan</div>
+<section id="daily" class="sec"><div class="kicker">31 · Akuntansi & laporan</div>
 <h2>Daily transaction (kas & bank harian)</h2>
 <p>Untuk mencatat transaksi kas/bank harian di luar hotel (biaya listrik, belanja kecil, setoran) dengan cepat: satu header, banyak baris, satu jurnal per baris. Buka <span class="path">Accounting <i>›</i> Accounting <i>›</i> Daily Transactions</span>.</p>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Accounting › Daily Transactions › New</code></div><a href="img/daily_transaction_form.jpg" target="_blank"><img src="img/daily_transaction_form.jpg" width="1350" height="896" loading="lazy" alt="Form daily transaction: Target COA, Journal, saldo awal/akhir, dan baris transaksi dengan Contra COA."></a><figcaption>Form daily transaction: Target COA, Journal, saldo awal/akhir, dan baris transaksi dengan Contra COA.</figcaption></figure>
@@ -651,7 +672,7 @@
 <li><div><b>Tambah baris:</b> tanggal, keterangan, jumlah (+ masuk / − keluar), dan Contra COA (akun lawan).</div></li>
 <li><div><b>Klik <span class="btn">Validate</span>.</b> Satu jurnal dibuat per baris. <span class="btn">Import Statement</span> untuk impor mutasi bank.</div></li></ol>
 </section>
-<section id="laporan" class="sec"><div class="kicker">31 · Akuntansi & laporan</div>
+<section id="laporan" class="sec"><div class="kicker">32 · Akuntansi & laporan</div>
 <h2>Laporan</h2>
 <p class="lead">Laporan operasional hotel dan laporan keuangan.</p>
 <h3>1. Laporan Tamu Harian</h3>
@@ -676,7 +697,7 @@
 <p><span class="path">Accounting <i>›</i> Reporting</span>: Profit and Loss, Balance Sheet, Cash Flow, General Ledger, Trial Balance, Aged Partner Balance, Bank/Cash Book. Pilih periode lalu <span class="btn">Print</span>.</p>
 <figure class="shot " style="max-width:826px"><div class="bar"><span></span><span></span><span></span><code>Accounting › Reporting › Profit and Loss</code></div><a href="img/profit_loss_wizard.jpg" target="_blank"><img src="img/profit_loss_wizard.jpg" width="826" height="418" loading="lazy" alt="Pilih tanggal mulai/akhir dan jenis entri, lalu Print."></a><figcaption>Pilih tanggal mulai/akhir dan jenis entri, lalu Print.</figcaption></figure>
 </section>
-<section id="crm" class="sec"><div class="kicker">32 · Akuntansi & laporan</div>
+<section id="crm" class="sec"><div class="kicker">33 · Akuntansi & laporan</div>
 <h2>CRM forecast otomatis</h2>
 <p>Setiap reservasi otomatis membuat <b>opportunity</b> di CRM, sehingga <span class="path">CRM <i>›</i> Reporting <i>›</i> Forecast</span> terisi tanpa input ulang.</p>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>CRM › Reporting › Forecast</code></div><a href="img/crm_forecast.jpg" target="_blank"><img src="img/crm_forecast.jpg" width="1350" height="896" loading="lazy" alt="Forecast per bulan check-in: setiap kartu = satu reservasi dengan nilai pendapatan dan tag &quot;Reservasi Hotel&quot;."></a><figcaption>Forecast per bulan check-in: setiap kartu = satu reservasi dengan nilai pendapatan dan tag "Reservasi Hotel".</figcaption></figure>
@@ -689,7 +710,7 @@
 <tr><td>Dibatalkan / No Show</td><td>Lost (alasan: Reservasi Dibatalkan / No Show)</td><td>0%</td></tr></tbody></table></div>
 <div class="note info"><span>INFO</span><div>Nilai = total reservasi, tanggal closing = tanggal check-in, partner = travel agent / perusahaan / tamu, sumber = channel OTA atau sumber booking. Tombol <span class="btn">CRM</span> di reservasi membuka opportunity-nya.</div></div>
 </section>
-<section id="ota" class="sec"><div class="kicker">33 · Akuntansi & laporan</div>
+<section id="ota" class="sec"><div class="kicker">34 · Akuntansi & laporan</div>
 <h2>Channel manager (OTA)</h2>
 <p>Menghubungkan ketersediaan, harga, dan booking dengan OTA (Booking.com, Traveloka, Agoda, …) lewat <b>Channex</b>.</p>
 <ol class="steps">
@@ -701,7 +722,7 @@
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Channel Manager › Channel Connection</code></div><a href="img/channel_connection_form.jpg" target="_blank"><img src="img/channel_connection_form.jpg" width="1350" height="680" loading="lazy" alt="Form koneksi Channex: API key, property ID, rate multiplier, webhook, dan status."></a><figcaption>Form koneksi Channex: API key, property ID, rate multiplier, webhook, dan status.</figcaption></figure>
 <div class="note info"><span>INFO</span><div>Booking OTA masuk ke <span class="path">Channel Manager <i>›</i> OTA Bookings</span> dan menjadi reservasi. Booking OTA selalu diterima walau tipe kamar penuh; reservasinya diberi to-do <b>Overbooking OTA</b>.</div></div>
 </section>
-<section id="pr-stok" class="sec"><div class="kicker">34 · Akuntansi & laporan</div>
+<section id="pr-stok" class="sec"><div class="kicker">35 · Akuntansi & laporan</div>
 <h2>Purchase Request: ambil dari Store atau beli</h2>
 <p class="lead">Departemen cukup meminta barang. Setelah permintaan disetujui, <b>Purchasing</b> yang menentukan barang diambil dari Store/Gudang, dibeli, atau keduanya. Yang penting permintaan terpenuhi.</p>
 <div class="flow"><div class="fstep"><b>1 · Requester</b><p>Buat PR: barang, jumlah, Lokasi Departemen</p></div><div class="fstep"><b>2 · Approver</b><p>Approve jumlah yang diminta</p></div><div class="fstep"><b>3 · Purchasing</b><p>Proses Permintaan: dari Store dan/atau beli</p></div><div class="fstep"><b>4 · Barang beli</b><p>Diterima di Store, lalu otomatis ditransfer ke departemen</p></div><div class="fstep"><b>5 · Storekeeper</b><p>Validate transfer; PR Done saat semua terpenuhi</p></div></div>
@@ -715,7 +736,7 @@
 <li><div><b>Approver</b> membuka PR › <span class="btn">Approve</span>.</div></li>
 <li><div><b>Purchasing klik <span class="btn">Proses Permintaan</span>.</b> Sistem menyarankan per barang: <b>Dari Store</b> = stok bebas di Store, <b>Dibeli</b> = kekurangannya. Kedua angka <b>boleh diubah</b>, mis. beli 6 kg karena kemasan walau kurangnya 5 kg, atau beli sebagian dulu. Pilih <b>Vendor</b> untuk barang yang dibeli › <span class="btn">Proses</span>.</div></li>
 <li><div>Dalam satu langkah sistem membuat <b>transfer Store → Lokasi Departemen</b> (stok langsung dicadangkan) dan <b>RFQ</b> ke vendor dengan jumlah Dibeli. Ringkasan tercatat di chatter, termasuk angka yang diubah dari saran (<i>saran …</i>). PR menjadi <b>In Progress</b>.</div></li>
-<li><div><b>Purchasing</b> melanjutkan RFQ seperti biasa (bab 35): <span class="btn">Confirm Order</span>. Barang dari vendor <b>diterima di Store</b> dulu, jadi tercatat di kartu stok. Begitu penerimaan di-<span class="btn">Validate</span>, sistem <b>otomatis membuat transfer Store → Lokasi Departemen</b> untuk yang masih ditunggu departemen. Kelebihan beli tetap di Store.</div></li>
+<li><div><b>Purchasing</b> melanjutkan RFQ seperti biasa (bab 36): <span class="btn">Confirm Order</span>. Barang dari vendor <b>diterima di Store</b> dulu, jadi tercatat di kartu stok. Begitu penerimaan di-<span class="btn">Validate</span>, sistem <b>otomatis membuat transfer Store → Lokasi Departemen</b> untuk yang masih ditunggu departemen. Kelebihan beli tetap di Store.</div></li>
 <li><div><b>Storekeeper</b> membuka smart button <b>Transfer ke Departemen</b> (atau <span class="path">Inventory <i>›</i> Operations <i>›</i> Transfers</span>) › siapkan barang › <span class="btn">Validate</span>. Stok pindah dari Store ke departemen.</div></li>
 <li><div>Kolom <b>Diterima Departemen</b> dan <b>Status Pemenuhan</b> di baris PR ikut terisi. Jika semua baris <b>Terpenuhi</b>, PR otomatis <b>Done</b>. Bila masih ada sisa (beli sebagian), purchasing klik <span class="btn">Proses Permintaan</span> lagi untuk sisanya.</div></li></ol>
 <figure class="shot"><div class="bar"><span></span><span></span><span></span><code>Purchase Request › Proses Permintaan</code></div><a href="img/pr_proses_permintaan_wizard.jpg" target="_blank"><img src="img/pr_proses_permintaan_wizard.jpg" width="1350" height="732" loading="lazy" alt="Proses Permintaan PR00003 (Bar): Es Batu diminta 20, ada 10 di Store, saran 10 dari Store dan 10 dibeli; Sirup dan Kopi Bubuk cukup dari Store."></a><figcaption>Proses Permintaan PR00003 (Bar): Es Batu diminta 20, ada 10 di Store, saran 10 dari Store dan 10 dibeli; Sirup dan Kopi Bubuk cukup dari Store.</figcaption></figure>
@@ -735,7 +756,7 @@
 <div class="note tip"><span>TIPS</span><div>Tombol <span class="btn">Create RFQ</span> bawaan tetap ada (mis. untuk menambah ke RFQ yang sudah ada). Jumlahnya otomatis hanya sisa yang belum diambil dari Store atau dibeli.</div></div>
 <div class="note info"><span>SETUP</span><div>Lokasi departemen baru: <span class="path">Inventory <i>›</i> Configuration <i>›</i> Locations</span> › <span class="btn">New</span>, centang <b>Lokasi Departemen Hotel</b>. Fitur <b>Storage Locations</b> di Inventory Settings harus aktif.</div></div>
 </section>
-<section id="pembelian" class="sec"><div class="kicker">35 · Akuntansi & laporan</div>
+<section id="pembelian" class="sec"><div class="kicker">36 · Akuntansi & laporan</div>
 <h2>Pembelian & stok</h2>
 <ol class="steps">
 <li><div><b>Buat RFQ:</b> <span class="path">Purchase <i>›</i> Orders <i>›</i> Requests for Quotation</span> › <span class="btn">New</span>, pilih supplier, produk, jumlah, harga.</div></li>
@@ -746,7 +767,7 @@
 <figure class="shot narrow"><div class="bar"><span></span><span></span><span></span><code>Purchase › Purchase Orders</code></div><a href="img/old_po_to_approve.png" target="_blank"><img src="img/old_po_to_approve.png" width="800" height="500" loading="lazy" alt="PO di atas limit menunggu approval."></a><figcaption>PO di atas limit menunggu approval.</figcaption></figure>
 <div class="note info"><span>INFO</span><div>Aktifkan approval PO di <span class="path">Purchase <i>›</i> Configuration <i>›</i> Settings</span> › Purchase Order Approval, isi Minimum Amount.</div></div>
 </section>
-<section id="faq" class="sec"><div class="kicker">36 · Referensi</div>
+<section id="faq" class="sec"><div class="kicker">37 · Referensi</div>
 <h2>FAQ & troubleshooting</h2>
 <details><summary>Kamar tidak muncul saat check-in.</summary>
 <p>Hanya kamar <b>Tersedia</b> yang bisa di-check-in. Selesaikan tugas housekeeping/maintenance kamar itu atau cek statusnya di Master Data › Kamar.</p></details>
