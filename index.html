@@ -5,7 +5,7 @@
 <link rel="icon" href="img/xerpium-logo.png">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <div class="wrap">
-<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 3.0</div>
+<header class="hero"><div class="tx"><div class="eyebrow">Panduan Pengguna · Versi 3.1</div>
 <h1>Xerpium Hotel Management<br>Gran Malindo Hotel</h1>
 <p>Panduan lengkap dari awal sampai akhir: setup chart of accounts, pajak, dan produk; master data kamar dan harga; reservasi sampai check-out; housekeeping dan night audit; kasir restoran (POS) dengan tagihan ke kamar; cetak langsung lewat Print Direct; serta jurnal dan laporan.</p>
 <div class="meta"><span>Platform <b>Xerpium</b></span><span>Bab <b>37</b></span><span>Tanggal <b>27 November 2026</b></span></div></div>
@@ -105,6 +105,7 @@
 <h3>Peran departemen (disarankan)</h3>
 <p>Supaya tiap staf hanya melihat menu yang ia butuhkan, pilih <b>satu peran</b> di bagian <b>Hotel - Peran Departemen</b> pada form pengguna. Hak akses di bawahnya terisi otomatis.</p>
 <div class="tbl"><table><thead><tr><th>Peran</th><th>Menu yang terbuka</th><th>Bisa mengubah</th></tr></thead><tbody>
+<tr><td><b>Direktur / Manager Hotel</b></td><td>Semua aplikasi dengan hak Administrator/Manager: Hotel Management (General Manager), Accounting, Inventory, Purchase, Purchase Request, Point of Sale, Manufacturing, Sales, CRM, HR, Aset, dan lainnya</td><td>Semua data di aplikasi tersebut. Halaman <b>Settings</b> (user &amp; pengaturan sistem, termasuk Pengaturan Hotel) tetap di admin; centang <b>Administration: Settings</b> bila Direktur juga perlu</td></tr>
 <tr><td><b>Front Office</b></td><td>Semua menu Hotel Management (Front Desk, Operasional, Master Data, Channel Manager, Laporan termasuk Laporan Tamu Harian dan City Ledger), kecuali Konfigurasi hotel dan pengaturan OTA</td><td>Reservasi, check-in/out, folio, invoice, deposit, BEO, grup</td></tr>
 <tr><td><b>Housekeeping</b></td><td>Operasional › Housekeeping &amp; Maintenance; Front Desk › Tape Chart, Reservasi, Tiba Hari Ini, Check-Out Hari Ini, Laporan Tamu Asing (APOA); Laporan Tamu Harian; Purchase Requests</td><td>Housekeeping, Maintenance, Purchase Request. Front Desk <b>hanya lihat</b></td></tr>
 <tr><td><b>Engineering</b></td><td>Sama dengan Housekeeping</td><td>Sama dengan Housekeeping</td></tr>
@@ -115,7 +116,7 @@
 <ol class="steps">
 <li><div><b>Buka <span class="path">Settings <i>›</i> Users & Companies <i>›</i> Users</span>.</b></div></li>
 <li><div><b>Pilih pengguna,</b> buka tab <span class="btn">Access Rights</span>.</div></li>
-<li><div><b>Di bagian <b>Hotel - Peran Departemen</b>,</b> pilih satu peran (Front Office, Housekeeping, Engineering, F&amp;B, atau Accounting). Bila perlu hak khusus di luar peran, centang grup di bagian <b>Hotel Management</b>, <b>Point of Sale</b>, atau <b>Invoicing</b>.</div></li>
+<li><div><b>Di bagian <b>Hotel - Peran Departemen</b>,</b> pilih satu peran (Direktur / Manager Hotel, Front Office, Housekeeping, Engineering, F&amp;B, atau Accounting). Bila perlu hak khusus di luar peran, centang grup di bagian <b>Hotel Management</b>, <b>Point of Sale</b>, atau <b>Invoicing</b>.</div></li>
 <li><div><b>Klik <span class="btn">Save</span>.</b> Pengguna perlu refresh browser agar menu baru muncul.</div></li></ol>
 <figure class="shot "><div class="bar"><span></span><span></span><span></span><code>Settings › Users › Access Rights</code></div><a href="img/user_access_rights.jpg" target="_blank"><img src="img/user_access_rights.jpg" width="1350" height="896" loading="lazy" alt="Bagian Hotel Management di form pengguna: Front Desk, Housekeeper, Supervisor, Accountant, dan General Manager."></a><figcaption>Bagian Hotel Management di form pengguna: Front Desk, Housekeeper, Supervisor, Accountant, dan General Manager.</figcaption></figure>
 <div class="note warn"><span>PENTING</span><div>Tombol <span class="btn">Catat Deposit</span> dan <span class="btn">Catat Pembayaran</span> hanya muncul untuk pengguna yang juga punya hak <b>Invoicing</b> (Accounting › Billing). Berikan hak ini ke kasir front desk yang menerima uang.</div></div>
